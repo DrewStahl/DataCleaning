@@ -1,7 +1,6 @@
 #make sure these are installed:
 #urllib, html-table-parser-python3, xlsxwriter, openpyxl
 
-#need to have these along with xlsxwriter and openpyxl installed before running code 
 import urllib.request #gets content from turbostats
 from html_table_parser.parser import HTMLTableParser #extract table data from turbostats
 import pandas as pd #helps clean the data
