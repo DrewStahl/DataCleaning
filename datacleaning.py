@@ -119,7 +119,6 @@ def all_datasets():
 
   return [player_data, team_data]
 
-#put desired path that you have into here
 def write_to_excel(path = input()):
   combined_player, combined_team = all_datasets()
 
@@ -134,6 +133,5 @@ def write_to_excel(path = input()):
   
   return 'Workbook uploaded.'
 
-#for future use, copy your own computer path and paste it 
-#so that the excel workbook will go straight there
+#put desired path that you have into here
 write_to_excel()
