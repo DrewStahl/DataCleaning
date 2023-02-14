@@ -1,7 +1,7 @@
 #make sure these are installed:
 #urllib, html-table-parser-python3, xlsxwriter, openpyxl
 
-import urllib.request #gets content from turbostats
+import urllib.request #gets access to turbostats
 from html_table_parser.parser import HTMLTableParser #extract table data from turbostats
 import pandas as pd #helps clean the data
 import numpy as np #used to flip for opposing team stats as necessary
