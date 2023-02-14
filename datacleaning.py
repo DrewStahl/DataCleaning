@@ -1,13 +1,11 @@
 #make sure these are installed:
 #urllib, html-table-parser-python3, xlsxwriter, openpyxl
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 import urllib.request #gets access to turbostats
 from html_table_parser.parser import HTMLTableParser #extract table data from turbostats
 import pandas as pd #helps clean the data
 import numpy as np #used to flip for opposing team stats as necessary
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #opens a site and read HTTP for turbostats
 def url_get_contents(link):
     #making request to the website to access data
@@ -95,9 +93,7 @@ def dataset(game: str):
   game_results.insert(20,'Opp_To%', list(np.flip(game_results['To%'])))
 
   return [game_data, game_results]
-
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #this is separate so that you can test whether data matches desired format
 def all_datasets():
   #team and player data arrays
@@ -122,9 +118,7 @@ def all_datasets():
   team_data = pd.concat(team_data, axis=0).reset_index(drop=True)
 
   return [player_data, team_data]
-
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #put desired path that you have into here
 def write_to_excel(path = input()):
   combined_player, combined_team = all_datasets()
