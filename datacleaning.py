@@ -1,10 +1,12 @@
 #make sure these are installed:
 #urllib, html-table-parser-python3, xlsxwriter, openpyxl
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 import urllib.request #gets access to turbostats
 from html_table_parser.parser import HTMLTableParser #extract table data from turbostats
 import pandas as pd #helps clean the data
 import numpy as np #used to flip for opposing team stats as necessary
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #opens a site and read HTTP for turbostats
 def url_get_contents(link):
@@ -14,7 +16,7 @@ def url_get_contents(link):
 
     #reading contents from the website
     return content.read()
-  
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def dataset(game: str):
   site = 'https://www.turbostatsevents.com/site/2/boxscore/basketball/pioneervalleytipoff/'
 
@@ -94,6 +96,8 @@ def dataset(game: str):
 
   return [game_data, game_results]
 
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #this is separate so that you can test whether data matches desired format
 def all_datasets():
   #team and player data arrays
@@ -119,6 +123,9 @@ def all_datasets():
 
   return [player_data, team_data]
 
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#put desired path that you have into here
 def write_to_excel(path = input()):
   combined_player, combined_team = all_datasets()
 
@@ -133,5 +140,6 @@ def write_to_excel(path = input()):
   
   return 'Workbook uploaded.'
 
-#put desired path that you have into here
+#for future use, copy your own computer path and paste it 
+#so that the excel workbook will go straight there
 write_to_excel()
