@@ -132,7 +132,7 @@ def write_to_excel(path = input()):
       combined_player.to_excel(writer, sheet_name='PlayerData', index=False)
       combined_team.to_excel(writer, sheet_name='TeamData', index=False)
   
-  return 'Workbook uploaded.'
+  return 'Player and team data uploaded.'
 
 #for future use, copy your own computer path and paste it 
 #so that the excel workbook will go straight there
